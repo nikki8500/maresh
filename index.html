@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Maresh Photography | Professional Photographer</title>
+    <meta name="description" content="Professional photography services specializing in weddings, portraits, and events. Capturing timeless moments with artistic vision.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style1.css" />
+    <style>
+        /* Basic loading overlay styles */
+        #loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s;
+        }
+
+        #loading-overlay.show {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.3s ease-in-out, visibility 0s linear 0s;
+        }
+
+        .loader {
+            border: 8px solid #f3f3f3; /* Light grey border */
+            border-top: 8px solid #333; /* Black border-top */
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div id="loading-overlay" class="show">
+        <div class="loader"></div>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="mareshlogo.jpg" alt="Maresh Photography Logo" height="60" width="100">
+            </div>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#home" class="active:hover">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="social-nav">
+                <a href="https://www.youtube.com/@mareshphotography3128" target="_blank" aria-label="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://www.instagram.com/mareshphotography/" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#contact" class="btn btn-primary">Book a Session</a>
+            </div>
+
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-slider">
+            <div class="slide active">
+                <div class="slide-content">
+                    <h1>Capture Your Precious Moments</h1>
+                    <p>Professional photography that tells your unique story</p>
+                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-content">
+                    <h1>Wedding Photography</h1>
+                    <p>Timeless memories of your special day</p>
+                    <a href="#gallery" class="btn btn-secondary">View Gallery</a>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-content">
+                    <h1>Portrait Sessions</h1>
+                    <p>Beautiful, natural portraits that capture your essence</p>
+                    <a href="#services" class="btn btn-secondary">Our Services</a>
+                </div>
+            </div>
+        </div>
+        <div class="slider-controls">
+            <button class="prev-slide" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
+            <button class="next-slide" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <section class="intro-section">
+        <div class="container">
+            <h2 class="section-title">Photographer | Videographer | Editor</h2>
+            <div class="intro-content">
+                <p>Welcome to Maresh Photography, where we specialize in capturing life's most precious moments with artistry and passion. With over a decade of experience, we create images that tell your unique story with authenticity and beauty.</p>
+
+                <div class="specialties">
+                    <div class="specialty">
+                        <i class="fas fa-camera-retro"></i>
+                        <h3>Weddings</h3>
+                        <p>Timeless coverage of your special day</p>
+                    </div>
+                    <div class="specialty">
+                        <i class="fas fa-portrait"></i>
+                        <h3>Portraits</h3>
+                        <p>Beautiful, natural images that capture your essence</p>
+                    </div>
+                    <div class="specialty">
+                        <i class="fas fa-video"></i>
+                        <h3>Videography</h3>
+                        <p>Cinematic storytelling of your events</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="mareshimg.jpg" alt="Maresh - Professional Photographer" loading="lazy">
+                </div>
+                <div class="about-content">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="lead">Hi, I'm Maresh - the creative eye behind Maresh Photography.</p>
+                    <p>Photography isn't just my profession—it's my passion. I specialize in capturing life's most meaningful moments with authenticity and a touch of artistry. Whether it's a wedding, portrait session, or special event, my goal is always the same: to turn memories into timeless visuals.</p>
+                    <p>I take pride in my cinematic style and attention to detail that help bring each story to life. Every frame I shoot is crafted to reflect the emotion, energy, and essence of the moment.</p>
+
+                    <div class="signature">
+                        <img src="" alt="Maresh's Signature" loading="lazy">
+                    </div>
+
+                    <div class="awards">
+                        <h3>Recognitions & Awards</h3>
+                        <ul>
+                            <li>Best Wedding Photography 2022</li>
+                            <li>Featured in Photography Magazine</li>
+                            <li>10+ Years of Professional Experience</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <h2 class="section-title">Our Gallery</h2>
+            <p class="section-subtitle">A glimpse of our recent work</p>
+
+            <div class="gallery-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="wedding">Weddings</button>
+                <button class="filter-btn" data-filter="portrait">Portraits</button>
+                <button class="filter-btn" data-filter="event">Events</button>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item wedding">
+                    <img src="https://media.istockphoto.com/id/1279103458/photo/capture-this-moment.jpg?s=612x612&w=0&k=20&c=ZFEne33VwwdfWkKLeA4_rm6LS28TYMaMAbBdh6BR3kI=" alt="Wedding Photography" loading="lazy">
+                    <div class="overlay">
+                        <h3>Wedding Day</h3>
+                        <p>Beautiful moments captured</p>
+                    </div>
+                </div>
+                <div class="gallery-item portrait">
+                    <img src="https://www.anthropics.com/portraitpro/img/page-images/homepage/v24/out-now.jpg" alt="Portrait Photography" loading="lazy">
+                    <div class="overlay">
+                        <h3>Portrait Session</h3>
+                        <p>Natural and elegant</p>
+                    </div>
+                </div>
+                <div class="gallery-item wedding">
+                    <img src="hero.jpg" alt="Wedding Photography" loading="lazy">
+                    <div class="overlay">
+                        <h3>Bridal Portraits</h3>
+                        <p>Timeless beauty</p>
+                    </div>
+                </div>
+                <div class="gallery-item event">
+                    <img src="https://www.oyorooms.com/blog/wp-content/uploads/2018/03/fe-30.jpg" alt="Event Photography" loading="lazy">
+                    <div class="overlay">
+                        <h3>Corporate Event</h3>
+                        <p>Professional coverage</p>
+                    </div>
+                </div>
+                <div class="gallery-item portrait">
+                    <img src="https://onebighappyphoto.com/wp-content/uploads/family-professional-pictures-1-1547-One-Big-Happy-Photo.jpg" alt="Portrait Photography" loading="lazy">
+                    <div class="overlay">
+                        <h3>Family Portraits</h3>
+                        <p>Cherished memories</p>
+                    </div>
+                </div>
+                <div class="gallery-item wedding">
+                    <img src="https://zerogravity.photography/wp-content/uploads/2024/12/HEM07320-copy.webp" alt="Wedding Photography" loading="lazy">
+                    <div class="overlay">
+                        <h3>Candid Moments</h3>
+                        <p>Emotions captured</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <a href="#" class="btn btn-primary">View Full Portfolio</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Professional photography for all occasions</p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-ring"></i>
+                    </div>
+                    <h3>Wedding Photography</h3>
+                    <p>Full-day coverage of your wedding with a team of professionals to capture every special moment.</p>
+                    <ul>
+                        <li>Pre-wedding shoot</li>
+                        <li>Full day coverage</li>
+                        <li>500+ edited photos</li>
+                        <li>Online gallery</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline">Inquire Now</a>
+                </div>
+
+                <div class="service-card featured">
+                    <div class="service-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Engagement Sessions</h3>
+                    <p>Romantic and fun sessions to celebrate your love story before the big day.</p>
+                    <ul>
+                        <li>2-hour session</li>
+                        <li>2 locations</li>
+                        <li>50+ edited photos</li>
+                        <li>Online gallery</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary">Book Session</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Portrait Photography</h3>
+                    <p>Beautiful portraits for individuals, couples, families, and professionals.</p>
+                    <ul>
+                        <li>1-hour session</li>
+                        <li>1 location</li>
+                        <li>30+ edited photos</li>
+                        <li>Online gallery</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline">Inquire Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">Client Testimonials</h2>
+            <p class="section-subtitle">What our clients say about us</p>
+
+            <div class="testimonials-slider">
+                <div class="testimonial active">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Maresh captured our wedding day perfectly! The photos are stunning and truly reflect the emotions of the day. We couldn't be happier!"</p>
+                        <div class="client-info">
+                            <img src="client1.jpg" alt="Sarah & James" loading="lazy">
+                            <div>
+                                <h4>Sarah & James</h4>
+                                <span>Wedding Clients</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"The family portraits we got are absolutely beautiful. Maresh made us all feel comfortable and the results speak for themselves."</p>
+                        <div class="client-info">
+                            <img src="client2.jpg" alt="The Johnson Family" loading="lazy">
+                            <div>
+                                <h4>The Johnson Family</h4>
+                                <span>Portrait Session</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p>"Professional, talented, and wonderful to work with. Our corporate event was captured beautifully and we've received so many compliments!"</p>
+                        <div class="client-info">
+                            <img src="client3.jpg" alt="Michael Thompson" loading="lazy">
+                            <div>
+                                <h4>Michael Thompson</h4>
+                                <span>Corporate Client</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-controls">
+                <button class="testimonial-prev"><i class="fas fa-chevron-left"></i></button>
+                <div class="testimonial-dots"></div>
+                <button class="testimonial-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Find answers to common questions</p>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How far in advance should we book?</span>
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>For weddings, we recommend booking 6-12 months in advance, especially for popular dates. Portrait sessions can typically be booked 2-4 weeks in advance, but we occasionally have last-minute availability.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What is your photography style?</span>
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                      <p>My style is a blend of documentary and fine art photography. I capture authentic moments as they happen while also creating beautifully composed images with attention to light, composition, and emotion.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do you travel for shoots?</span>
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! I'm available for travel both nationally and internationally. Travel fees apply for locations outside my standard service area, which we can discuss when planning your session.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How long until we receive our photos?</span>
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Portrait sessions are typically delivered within 2-3 weeks. Weddings take 6-8 weeks for full delivery due to the volume of images. You'll receive a sneak peek within a few days of your event.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What should we wear for our session?</span>
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>I provide all clients with a detailed style guide after booking. Generally, choose outfits that reflect your personality, coordinate without matching exactly, and avoid busy patterns or logos.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do you offer videography services?</span>
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! We have a team of professional videographers who work alongside me to create beautiful cinematic films. You can book photography and videography separately or as a package.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p class="section-subtitle">Let's create something beautiful together</p>
+
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@mareshphotography.com</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Studio Locations</h3>
+                            <p>Sathupally, Telangana</p>
+                            <p>Hyderabad, Telangana</p>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form action="https://formspree.io/f/mqaqzerk"
+                    method="POST" id="photography-contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required>
+                            <label for="name">Your Name</label>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">Email Address</label>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone">
+                            <label for="phone">Phone Number</label>
+                        </div>
+
+                        <div class="form-group">
+                            <select id="service" name="service" required>
+                                <option value="" disabled selected></option>
+                                <option value="wedding">Wedding Photography</option>
+                                <option value="engagement">Engagement Session</option>
+                                <option value="portrait">Portrait Session</option>
+                                <option value="event">Event Coverage</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <label for="service">Service Interested In</label>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="4" required></textarea>
+                            <label for="message">Your Message</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="mareshlogo.jpg" alt="Maresh Photography Logo" class="footer-logo">
+                    <p>Capturing life's precious moments with artistry and passion. Professional photography services for weddings, portraits, and special events.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Wedding Photography</a></li>
+                        <li><a href="#">Engagement Sessions</a></li>
+                        <li><a href="#">Portrait Photography</a></li>
+                        <li><a href="#">Event Coverage</a></li>
+                        <li><a href="#">Videography</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@mareshphotography.com</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Sathupally & Hyderabad, Telangana</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2023 Maresh Photography. All Rights Reserved.</p>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loadingOverlay = document.getElementById('loading-overlay');
+            setTimeout(() => {
+                loadingOverlay.classList.remove('show');
+            }, 1500); // Simulate loading time - adjust as needed
+        });
+    </script>
+</body>
+</html>
